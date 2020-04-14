@@ -26,11 +26,6 @@ class Solution:
             return 0
         else:
             return stones[0]
-                
-
-        
-        print(stones)
-
 
 if __name__ == "__main__":
     sol = Solution()
