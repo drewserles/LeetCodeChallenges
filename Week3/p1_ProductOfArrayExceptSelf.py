@@ -34,11 +34,3 @@ if __name__ == "__main__":
     nums = [1,2,3,4]
     # nums=[1,0]
     print(sol.pes_space(nums))
-
-# Breaks my mult total idea:
-# Input:
-# [1,0]
-# Output:
-# [0,0]
-# Expected:
-# [0,1]
