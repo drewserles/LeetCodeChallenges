@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(s)):
             char = s[i]
             # Haven't seen this character yet
-            # OR the last time it was seen is not part of the current substring (occureed before start)
+            # OR the last time it was seen is not part of the current substring (occurred before start)
             if (char not in seen) or (seen[char] < i - curr):
                 seen[char] = i
                 curr += 1
