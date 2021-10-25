@@ -1,6 +1,6 @@
 '''
 Problem 442 (medium): https://leetcode.com/problems/find-all-duplicates-in-an-array/
-
+Key to the problem is not using extra space.
 '''
 
 # This solution uses extra space (the "seen" set), so it's not what we want.
