@@ -1,5 +1,5 @@
 '''
-This works but it's too slow
+This works but it's too slow - try something else
 '''
 class Solution:
     def largestComponentSize(self, nums):
