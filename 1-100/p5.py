@@ -43,7 +43,7 @@ class Solution:
         for sub_len in range(len(s), 0, -1):
             for start_idx in range(0, str_len-sub_len+1):
                 sub_str = s[start_idx: start_idx+sub_len]
-                if sub_str == sub_str[::-1]::
+                if sub_str == sub_str[::-1]:
                     return sub_str
 
     # Can I work smallest to largest and save what I've found? Could use that to lower the number of palindrome checks
