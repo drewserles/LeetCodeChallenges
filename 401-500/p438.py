@@ -8,7 +8,7 @@ because the letter count won't match for the anagram letters
 Speed up idea 2: If a letter at idx i isn't in p then that section is never going to be an anagram until idx i is dropped off.
     Could jump to i+1, recreate the dictionary slice, and continue
 
-^Nice, that one takes it from 56th% to 99.4%th
+^Nice, #2 takes it from 56th% to 99.4%th
 '''
 
 class Solution:
