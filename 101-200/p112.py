@@ -9,6 +9,8 @@ class TreeNode:
 '''
 Plan: DFS traversal returning True when the targetSum is reached
 Note the sum needs to be reached at a leaf.
+
+Also do it as a BFS.
 '''
 class Solution:
     def hasPathSum_dfs(self, root, targetSum):
