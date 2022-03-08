@@ -1,53 +1,27 @@
-# Definition for a Node.
-class Node:
-    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.next = next
-
+'''
+-i and j indices to walk through each list
+-take the maximum of the start point and the minimum of the end points as the interval. if max >= min then it's valid and record it
+-whichever of the two has the smaller end point increment that one
+'''
 class Solution:
-    def print_order(self, root):
-        queue = [root]
-        while len(queue) > 0:
-            node = queue.pop(0)
-            valu = None
-            if node.next:
-                valu = node.next.val
-            print(f'Val: {node.val}, next: {valu}')
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
-
-    def connect(self, root):
-        if not root: return root
-        lag, node = root, root
-
-        while lag.left:
-            node.left.next = node.right
-            if node.next:
-                node.right.next = node.next.left
-                node = node.next
+    def intervalIntersection(self, firstList, secondList):
+        i,j = 0,0
+        res = []
+        while i < len(firstList) and j < len(secondList):
+            int_start = max(firstList[i][0], secondList[j][0])
+            int_end = min(firstList[i][1], secondList[j][1])
+            if int_end >= int_start:
+                res.append([int_start, int_end])
+            if firstList[i][1] <= secondList[j][1]:
+                i += 1
             else:
-                lag = lag.left
-                node = lag
-        return root
-
+                j += 1
+        return res
 
 if __name__ == "__main__":
-    l7 = Node(7)
-    l6 = Node(6)
-    l5 = Node(5)
-    l4 = Node(4)
-    l3 = Node(3, l6, l7)
-    l2 = Node(2, l4, l5)
-    l1 = Node(1, l2, l3)
-
     sol = Solution()
-    sol.print_order(l1)
-    print('- - -')
+    firstList = [[1,3],[5,9]]
+    secondList = []
 
-    sol.connect(l1)
 
-    sol.print_order(l1)
+    print(sol.intervalIntersection(firstList, secondList))
